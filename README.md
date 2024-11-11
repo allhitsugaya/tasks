@@ -1,2 +1,2 @@
-# task1
-Task#1 of IT-School Hillel
+# tasks
+Tasks of IT-School Hillel
