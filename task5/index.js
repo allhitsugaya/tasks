@@ -11,7 +11,7 @@ let yourChoice = prompt("What would you like to convert");
 
 switch (yourChoice) {
     case `dollar`:
-        for (let i = 0; i <= 100; i+=10) {
+        for (let i = 10; i <= 100; i+=10) {
             console.log(`Convert this to uah ${i * dollar}`);
         }
         break;
@@ -36,7 +36,8 @@ for (let i = 0; i*i <Nnumb; i++){
 /*HW 5.4.*/
 let digitalNum = prompt("What is your N?");
 let i = 0;
-let con = false;
+let j = 0;
+
     while (i < digitalNum){
         i++;
         if (i % i !==0){
@@ -46,5 +47,18 @@ let con = false;
             console.log("Твоє число є простим");
         }
     }
-
-
+let con = confirm("Чи бажаєте ввести ще одне число?");
+if (con !==false){
+    let digitalNum1 = prompt("What is your N?");
+    while (j < digitalNum1){
+        j++;
+        if (j % j !==0){
+            console.log("Твоє число не є простим");
+        }
+        else{
+            console.log("Твоє число є простим");
+        }
+    }
+}
+else {
+}
