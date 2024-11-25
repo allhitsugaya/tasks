@@ -25,7 +25,7 @@ const result1 = foo(array);
 
 console.log(result1);
 
-//function foo(array) { просто который слайсит
+//function foo(array) { просто который слайсит это просто метод когда мы знаем что у нас в массиве есть и знаем номер элемента.
 //    if(array.filter((array) => array !== null )){
 //        let array2 = array.slice(1,6);
 //        return array2;
@@ -48,4 +48,3 @@ function removeElement(array1, item) {
 }
 removeElement(array1, changeArray);
 console.log(`Ваш елемент : ${array1}`);
-
