@@ -16,14 +16,14 @@ alert(result);
 /*HW 6.2 */
 const array = [{}, 1, 2, 3, 4, 5, 6, 'string', null];
 
-function foo(array) {
-    let notnum = array.filter((x) => x !== null && typeof x!== "string" && typeof x !== "object");
-    return notnum;
-} //убирает по типам
+function calculateAverage(numbers) {
+    if (numbers.length === 0) return 0;
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+}
 
-const result1 = foo(array);
-
-console.log(result1);
+const average = calculateAverage(result1);
+console.log("Average:", average);
 
 //function foo(array) { просто который слайсит это просто метод когда мы знаем что у нас в массиве есть и знаем номер элемента.
 //    if(array.filter((array) => array !== null )){
