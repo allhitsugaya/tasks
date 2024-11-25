@@ -38,18 +38,14 @@ console.log(result1);
 const array1 = [1, 3, 4, 6, 2, 5, 7];
 alert(`Ваш массив має такий вигляд ${array}`);
 let changeArray = prompt(`Чи бажаєте щось змінити?`);
-if (changeArray !== typeof 'object' && typeof changeArray!=='null') {
-
-    function removeElement(array1, item) {
+function removeElement(array1, item) {
+    if (changeArray !== typeof 'object' && typeof changeArray !== 'null') {
         let deleteArray = array1.splice(changeArray, 1);
         return array1;
+    } else {
+        console.log(`Введіть значення корректні`)
     }
-
-    removeElement(array1, changeArray);
-    console.log(`Ваш елемент : ${array1}`);
 }
-else{
-    console.log(`Введіть значення корректні`)
-}
-
+removeElement(array1, changeArray);
+console.log(`Ваш елемент : ${array1}`);
 
