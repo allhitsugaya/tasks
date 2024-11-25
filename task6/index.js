@@ -21,6 +21,7 @@ function calculateAverage(numbers) {
     const sum = numbers.reduce((acc, num) => acc + num, 0);
     return sum / numbers.length;
 }
+const result1 = array.filter(item => typeof item === 'number');
 
 const average = calculateAverage(result1);
 console.log("Average:", average);
