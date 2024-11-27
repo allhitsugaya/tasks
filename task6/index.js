@@ -4,9 +4,8 @@ const chars = prompt('Enter some chars for removing');
 
 
 // тут знаходиться наша функція
-function cutter(string, arr) {
-    let replaceWord = message.replaceAll(chars, '');// message - переміна а для неї я застосував метод replace аби прибрати данні слова які ввів користувач.
-    return replaceWord;
+function cutter(message, chars) {
+    return message.replace(chars, '');
 }
 
 const result = cutter(message, chars);
@@ -37,15 +36,10 @@ console.log("Average:", average);
 // }
 /*HW 6.3*/
 const array1 = [1, 3, 4, 6, 2, 5, 7];
-alert(`Ваш массив має такий вигляд ${array}`);
-let changeArray = prompt(`Чи бажаєте щось змінити?`);
+alert(`Ваш массив має такий вигляд ${array1}`);
 function removeElement(array1, item) {
-    if (changeArray !== typeof 'object' && typeof changeArray !== 'null') {
-        let deleteArray = array1.splice(changeArray, 1);
-        return array1;
-    } else {
-        console.log(`Введіть значення корректні`)
-    }
+    const newArray = array1.filter(element => element !== item);
+    return newArray;
 }
-removeElement(array1, changeArray);
-console.log(`Ваш елемент : ${array1}`);
+const result2 = removeElement(array1, 3); // отримаємо массив [1, 4, 6, 2, 5, 7]
+console.log(result2);
