@@ -21,7 +21,7 @@ function multiTwo (x){
      return x * y;
  };
 }
-console.log(multiTwo(5)(5));
+console.log(multiTwo(5)(5));// отримаємо 25
 /* HW 7.3*/
 function printChoice() {
     let attempts = 0;
@@ -43,5 +43,5 @@ function printChoice() {
     }
     alert(`Ви використали всі свої спроби.`);
 }
-printChoice();
+printChoice();//Визиваємо нашу функцію аби у нас був результат на html - сторінці
 
