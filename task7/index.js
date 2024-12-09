@@ -45,3 +45,28 @@ function printChoice() {
 }
 printChoice();//Визиваємо нашу функцію аби у нас був результат на html - сторінці
 
+function printChoice() {
+    let attempts = 10;
+
+    while (attempts > 0) {
+        let input = prompt(`Enter a number greater than 100.`);
+        let numInput = Number(input);
+
+        if (isNaN(numInput)) {
+            alert(`Please enter a valid number.`);
+            continue;
+        }
+
+        if (numInput > 100) {
+            console.log(`Your number: ${numInput}`);
+            return;
+        }
+
+        alert(`The number must be greater than 100. Try again.`);
+        attempts--;
+    }
+
+    alert(`You've used all your attempts.`);
+}
+
+printChoice();
