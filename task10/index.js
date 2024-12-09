@@ -56,12 +56,10 @@ const book = {
             console.log(`Name: ${contacts.name}; Phone: ${contacts.phone}; Email: ${contacts.email}`);
         }
     },
-    add: function (key, value) {
-        this.contacts.forEach(contact => {
-            contact[key] = value;
-        })
+    add: function (newContact) {
+        this.contacts.push(newContact);
     },
 };
-book.add('city', `Odessa` );
+book.add({ name: 'Leonid', phone: '+38088888888', email: 'example2@email.com' });
 book.find(`Serhii`);
 console.log(book.contacts);
