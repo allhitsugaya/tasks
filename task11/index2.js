@@ -1,3 +1,4 @@
+/*H.W. 11.1*/
 const rows = 10;
 const colums = 10;
 function tableOfPifagor(rows, cols) {
