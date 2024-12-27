@@ -16,7 +16,7 @@
             name="name"
             placeholder="Name"
             required>
-    <div id="nameerror" class="error"></div>
+    <div id="nameerror" class="error" name = `data-error`></div>
     <label for="message">Message:</label>
     <textarea
             id="message"
@@ -26,7 +26,7 @@
             placeholder="Your message"
             minlength="5"
             required></textarea>
-    <div id="messageerror" class="error"></div>
+    <div id="messageerror" class="error" name = `data-error`></div>
     <h2>How to answer you?</h2>
     <label for="phone">Phone:</label>
     <input
@@ -38,7 +38,7 @@
             pattern="^\+380\d{9}$"
             maxlength="13"
             required>
-    <div id="phoneerror" class="error"></div>
+    <div id="phoneerror" class="error" name = `data-error`></div>
     <label for="email">Email:</label>
     <input
             type="email"
@@ -48,7 +48,7 @@
             title="Email must be in the format: example@gmail.com"
             pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
             required>
-    <div id="emailerror" class="error"></div>
+    <div id="emailerror" class="error" name = `data-error`></div>
     <button id="submit" type="submit">Send message</button>
 </form>
 </body>
