@@ -1,7 +1,7 @@
 const input = document.querySelector('.form__input');
 const btn = document.querySelector('.form__btn');
 let task = [];
-const list = document.querySelector('.js--todos-wrapper');
+const list = document.getElementById('todos-list');
 if (localStorage.getItem(`task`)) task = task.concat(JSON.parse(localStorage.getItem(`task`)));
 
 function createEl({ type = 'div', content, attributes } = {}) {
@@ -25,7 +25,10 @@ function createEl({ type = 'div', content, attributes } = {}) {
 }
 
 function toDoList(taskObj) {
-    const checkbox = createEl({ type: 'input', content:``, attributes:{type: `checkbox` , checked: taskObj.checked } });
+    const checkbox = createEl({ type: 'input', content:``, attributes:{type: `checkbox` } });
+    if (taskObj.checked) {
+        checkbox.checked = true;
+    }
     const span = createEl({ type: 'span', content: taskObj.text, attributes: { class: `todo-item__description` } });
     const li = createEl({ type: 'li', content: checkbox, attributes: { class: `todo-item` } });
     li.append(span);
@@ -65,12 +68,7 @@ list.addEventListener("change", (e) => {
     if (e.target.type === "checkbox") {
         const li = e.target.closest("li");
         const isChecked = e.target.checked;
-        if(e.target.checked) {
-            li.classList.add(`todo-item--checked`);
-        }
-        else{
-            li.classList.remove(`todo-item--checked`)
-        }
+        li.classList.toggle('todo-item--checked', isChecked);
         const taskDescription = li.querySelector('.todo-item__description').textContent;
         const taskIndex = task.findIndex(t => t === taskDescription);
         if(taskIndex !== -1) {
@@ -94,4 +92,8 @@ list.addEventListener("click", (e) => {
         li.remove();
     }
 });
+
+window.addEventListener(`storage`, (e) => {
+    console.log(e);
+})
 
