@@ -4,6 +4,12 @@ let task = [];
 const list = document.getElementById('todos-list');
 if (localStorage.getItem(`task`)) task = task.concat(JSON.parse(localStorage.getItem(`task`)));
 
+window.addEventListener(`storage`, (e) => {
+    if (e.key === 'task') {
+        console.log(JSON.parse(e.newValue));
+    }
+});
+
 function createEl({ type = 'div', content, attributes } = {}) {
     const $el = document.createElement(type);
     if (content) {
@@ -25,12 +31,13 @@ function createEl({ type = 'div', content, attributes } = {}) {
 }
 
 function toDoList(taskObj) {
-    const checkbox = createEl({ type: 'input', content:``, attributes:{type: `checkbox` } });
+    const checkbox = createEl({ type: 'input', attributes: { type: 'checkbox' } });
+    checkbox.checked = taskObj.checked;
+    const span = createEl({ type: 'span', content: taskObj.text, attributes: { class: 'todo-item__description' } });
+    const li = createEl({ type: 'li', content: checkbox, attributes: { class: 'todo-item' } });
     if (taskObj.checked) {
-        checkbox.checked = true;
+        li.classList.add('todo-item--checked');
     }
-    const span = createEl({ type: 'span', content: taskObj.text, attributes: { class: `todo-item__description` } });
-    const li = createEl({ type: 'li', content: checkbox, attributes: { class: `todo-item` } });
     li.append(span);
     const button = createEl({ type: 'button', content: 'Remove', attributes: { class: 'todo-item__delete' } });
     button.addEventListener('click', (e) => {
@@ -38,12 +45,15 @@ function toDoList(taskObj) {
         task = task.filter(t => t.text !== taskObj.text);
         localStorage.setItem('task', JSON.stringify(task));
     });
+
     li.append(button);
     list.append(li);
+
     checkbox.addEventListener('change', () => {
         taskObj.checked = checkbox.checked;
+        li.classList.toggle('todo-item--checked', checkbox.checked);
         localStorage.setItem('task', JSON.stringify(task));
-    })
+    });
 }
     if (task.length) {
         task.forEach(taskObj => {
@@ -68,20 +78,15 @@ list.addEventListener("change", (e) => {
     if (e.target.type === "checkbox") {
         const li = e.target.closest("li");
         const isChecked = e.target.checked;
-        li.classList.toggle('todo-item--checked', isChecked);
         const taskDescription = li.querySelector('.todo-item__description').textContent;
-        const taskIndex = task.findIndex(t => t === taskDescription);
-        if(taskIndex !== -1) {
+        const taskIndex = task.findIndex(t => t.text === taskDescription);
+        if (taskIndex !== -1) {
             task[taskIndex].checked = isChecked;
             localStorage.setItem('task', JSON.stringify(task));
         }
-        if (isChecked) {
-            li.classList.add('todo-item--checked');
-        } else {
-            li.classList.remove('todo-item--checked');
-        }
+        li.classList.toggle('todo-item--checked', isChecked);
     }
-    });
+});
 
 list.addEventListener("click", (e) => {
     if (e.target.classList.contains("todo-item__delete")) {
@@ -92,8 +97,4 @@ list.addEventListener("click", (e) => {
         li.remove();
     }
 });
-
-window.addEventListener(`storage`, (e) => {
-    console.log(e);
-})
 
