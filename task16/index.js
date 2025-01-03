@@ -39,7 +39,7 @@ Student.prototype.absent = function () {
 
 Student.prototype.summary = function () {
   let averageGrade = this.getAverage();
-  const averageAttendance = this.attendance.reduce((acc, num) => acc + num, 0)/this.attendance.length;
+  const averageAttendance = this.attendance.reduce((a, n) => a + n, 0)/this.attendance.length;
   if (averageGrade > 90 && averageAttendance > 0.9) {
       return 'Молодець!';
   }
