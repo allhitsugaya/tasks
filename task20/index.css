@@ -1,0 +1,9 @@
+#btn{
+    display:none;
+}
+#lol{
+    display: block;
+}
+.btn-danger {
+    pointer-events: auto;
+}

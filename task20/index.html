@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+<div class="container">
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header border-bottom-0">
+                <h1 class="modal-title fs-5">Your Task</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closer"></button>
+            </div>
+            <div class="modal-body py-0">
+                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Your text">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btn" data-bs-dismiss="modal">Add</button>
+                <button type="button" class="btn btn-secondary"  id="btn1" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <ul class="list-group">
+        </ul>
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
