@@ -1,3 +1,10 @@
 .idea
 .node_modules
 node_modules/
+.pnp.cjs
+.gitattributes
+.editorconfig
+package-lock.json
+.yarn/install-state.gz
+.yarn/*
+
