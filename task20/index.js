@@ -25,7 +25,9 @@ $('.list-group').on('click', '.btn-danger', function () {
 });
 
 $('.list-group').on('change', '.form-check-input', function () {
-    const li = $(this).closest('li').prop('checked') ? $(this).css("text-decoration", "line-through") : $(this).css("text-decoration", "none");
+    const li = $(this).closest('li');
+    const isChecked = $(this).prop('checked');
+    li.css(`text-decoration`, isChecked ? 'line-through' : 'none');
 });
 
 $('#btn1, #closer').on('click', function () {
