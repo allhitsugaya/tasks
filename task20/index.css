@@ -1,9 +1,15 @@
 #btn{
     display:none;
 }
-#lol{
+.lol{
     display: block;
 }
 .btn-danger {
     pointer-events: auto;
+}
+li{
+    background-color: #f4f6f7;
+}
+.container{
+    opacity: 0;
 }

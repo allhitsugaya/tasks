@@ -1,61 +1,71 @@
 function toDoList() {
     const valueinput = $('input').val().trim();
-    if (valueinput === ``) return;
-    const li = createEl({type: "li" , content: `${$("input").val()}` , attributes: { class: 'list-group-item'}});
-    const btn = createEl({type: "button" , content: `Remove` , attributes: {class: 'btn btn-danger'}});
-    li.append(btn);
+    if (valueinput === '') return;
+
+    const li = $('<li>', {
+        class: 'list-group-item d-flex align-items-center border-0 mb-2 rounded todolist'
+    });
+
+    const input = $('<input>', {
+        class: 'form-check-input me-2',
+        type: "checkbox"
+    });
+
+    const btnSee = $('<button>', {
+        class: 'lol',
+        text: 'See more'
+    });
+
+    const btnRemove = $('<button>', {
+        class: 'btn btn-danger',
+        text: 'Remove'
+    });
+    $('.container').find('p').text(valueinput);
+    li.prepend(input);
+    li.append(valueinput);
+    li.append(btnSee);
+    li.append(btnRemove);
     $('.list-group').append(li);
 }
 
-function createEl({ type = 'div', content, attributes  } = {}) {
-    const $el = document.createElement(type);
-
-    if (content) {
-        typeof content === 'string' ? $el.textContent = content : $el.append(content)
-    }
-
-    if (attributes) Object.entries(attributes).forEach(([key, value]) => {
-        $el.setAttribute(key, value)
-    })
-
-    return $el;
-}
 $('input').on('input', function () {
-    if ($(this).val().trim() !== '') {
-        $('#btn').css("display", "block");
-    }
-    else{
-        $('#btn').css("display", "none");
-    }
+    $('#btn').css("display", $(this).val().trim() !== '' ? 'block' : 'none');
 });
-$('#btn').on(`click`,function (){
+
+$('#btn').on('click', function () {
     toDoList();
     $('input').val('');
 });
 
-$('.list-group').on('click', '.btn-danger', function() {
-    $(this).closest("li").remove();
+$('.list-group').on('click', '.btn-danger', function () {
+    $(this).closest('li').remove();
 });
 
 
-$('#btn1').on('click', function() {
-    $('.container').css("display", "none");
-    const btnSee = createEl({ content: `See now`, type: "button", attributes:{id:`lol` , class: 'btn-success'} });
-    $(`body`).append(btnSee);
-    $('#lol').on(`click`, function (){
-        $(`.container`).css("display", "block");
-        $(`#lol`).remove();
-    });
-});
-$('#closer').on('click', function (){
-    $('.container').css("display", "none");
-    const btnSee = createEl({ content: `See now`, type: "button", attributes:{id:`lol` , class: 'btn-success'} });
-    $(`body`).append(btnSee);
-    $('#lol').on(`click`, function (){
-        $(`.container`).css("display", "block");
-        $(`#lol`).remove();
-    });
+$('.list-group').on('change', '.form-check-input', function () {
+    const li = $(this).closest('li');
+    if ($(this).prop('checked')) {
+        $(li).css("text-decoration", "line-through");
+    } else {
+        $(li).css("text-decoration", "none");
+    }
 });
 
 
+$('#btn1, #closer').on('click', function () {
+    $('.container').css('display', 'none');
+});
+
+$('.list-group').on('click', '.lol', function () {
+    $('.container').css('display', 'block').css('opacity', '1');
+
+});
+
+
+
+//const newDiv = $('<div>', {
+//     id: 'myDiv',
+//     class: 'container',
+//     'data-info': 'example'
+// });
 
