@@ -1,18 +1,4 @@
 {
   "name": "task21.1",
-  "packageManager": "yarn@4.5.2",
-  "dependencies": {
-    "jquery": "^3.7.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.26.4",
-    "@babel/core": "^7.26.7",
-    "@babel/preset-env": "^7.26.7"
-  },
-  "scripts": {
-    "build": "babel src -d dist"
-  },
-  "author": "Serhii Zhitnik",
-  "license": "MIT",
-  "description": ""
+  "packageManager": "yarn@4.5.2"
 }

@@ -4,9 +4,8 @@ function toDoList() {
 
     const li = $('<li>').addClass('list-group-item d-flex align-items-center border-0 mb-2 rounded todolist');
     const input = $('<input>').addClass('form-check-input me-2').attr(`type`, `checkbox`);
-    const btnSee = $('<button>').addClass('lol').text(`See more`);
+    const btnSee = $('<button>').addClass('lol').text('See more').attr('data-value', valueinput);
     const btnRemove = $('<button>').addClass('btn btn-danger').text(`Remove`);
-    $('.container').find('p').text(valueinput);
     li.prepend(input).append(valueinput).append(btnSee).append(btnRemove);
     $('.list-group').append(li);
 }
@@ -35,9 +34,10 @@ $('#btn1, #closer').on('click', function () {
 });
 
 $('.list-group').on('click', '.lol', function () {
+    const taskValue = $(this).attr('data-value');
+    $('.container').find('p').text(taskValue);
     $('.container').css('display', 'block').css('opacity', '1');
 });
-
 
 
 //const newDiv = $('<div>', {
