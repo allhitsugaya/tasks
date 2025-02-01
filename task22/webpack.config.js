@@ -65,6 +65,14 @@ export default (env, { mode = "development" }) => {
         }
       })
     ],
+    devServer: {
+      static:{
+        directory: resolve(__dirname, "dist"),
+      },
+      hot: true,
+      compress: true,
+      port:3000
+    },
     optimization: {
       splitChunks: {
         chunks: 'async',
