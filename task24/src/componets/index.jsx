@@ -1,7 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-const allInfo = [
+export const allInfo = [
     {
         "name": "Luke Skywalker",
         "height": "172",
@@ -32,22 +29,4 @@ const allInfo = [
         "url": "https://swapi.dev/api/people/1/"
     }
 ]
-
-export function TextArea() {
-     return <div className="form-floating">
-        <div className="form-control" placeholder="Leave a comment here" id="floatingTextarea" style={{height: '700px'}}></div>
-        <label htmlFor="floatingTextarea">
-            <button className="btn btn-secondary" style={{margin: '5px'}}>people</button>
-            <button className="btn btn-secondary" style={{margin: '5px'}}>1</button>
-            <pre>
-                {JSON.stringify(allInfo, null, 2)}
-            </pre>
-        </label>
-         {/*{console.log(allInfo)}*/}
-     </div>
-}
-
-//{allInfo.map((elem, index) => (
-//                     <li key = {index}>{JSON.stringify(elem)}</li>
-//                 ))};
 
