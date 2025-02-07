@@ -35,7 +35,33 @@ export class TodoAPI {
         }
     }
 
-  static async delete(url, id) {
+    static async create(url, data) {
+        try {
+            const resp = await fetch(`${url}/${TodoAPI.prefix}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!resp.ok) {
+                const errorData = await resp.json();
+                console.error('Failed to upload todo:', errorData);
+                throw new Error(`Failed to upload todo: ${errorData.message || 'Unknown error'}`);
+            }
+            const responseData = await resp.json();
+            console.log('Todo created successfully:', responseData);
+            return responseData;
+
+        } catch (e) {
+            console.error('Error during fetch operation:', e);
+            throw new Error("Failed to upload todos.");
+        }
+    }
+
+
+    static async delete(url, id) {
     try {
       const resp = await fetch(`${url}/${TodoAPI.prefix}/${id}`, {
         method: "DELETE",
