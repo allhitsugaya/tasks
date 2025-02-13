@@ -1,10 +1,10 @@
 import "./styles/App.css";
-import ButtonShow from "./componets/ButtonShow.jsx";
+import EmojiList from "./componets/EmojiList.jsx";
 
 const App = () => {
     return (
         <>
-            <ButtonShow/>
+            <EmojiList/>
         </>
 
     );
