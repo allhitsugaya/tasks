@@ -44,6 +44,10 @@ export class EmojiList extends Component {
         localStorage.removeItem('emojis');
         localStorage.removeItem('winner');
         localStorage.clear();
+        this.setState({
+            data: [...emjObject],
+            winner: null
+        });
     }
 
     render() {
