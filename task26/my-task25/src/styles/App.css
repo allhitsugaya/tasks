@@ -1,0 +1,38 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #000;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding-left: 52px;
+    gap: 10px;
+    justify-content: space-between;
+}
+.container .emj{
+    width: auto;
+    pointer-events: auto;
+}
+.btn-show{
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 auto;
+    display: block;
+    color: mediumspringgreen;
+    background-color: #555555;
+}
+.container .voices{
+    color: white;
+}
+.winner{
+    color: #0be69d;
+    text-align: center;
+}
+.emj{
+    text-decoration: none;
+}
+.voices{
+    text-decoration: none;
+}
