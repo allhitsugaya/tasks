@@ -1,0 +1,67 @@
+header{
+  background-color: #59598f;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+}
+
+.header{
+  margin: 5px;
+  padding: 50px;
+  text-decoration: none;
+  color: white;
+  width: auto;
+  height: 10vh;
+}
+
+footer{
+  background-color: #59598f;
+  width: auto;
+  height: 15vh;
+}
+.footer{
+  padding: 5px;
+  color: white;
+  list-style: none;
+}
+.submit-light{
+  background-color: #59598f;
+  color: white;
+}
+.submit-dark{
+  background-color: #000000;
+  color: white;
+}
+.remove{
+  background-color: #850909;
+  color: white;
+}
+.contact{
+  list-style: none;
+  padding: -50px;
+}
+.active{
+  color: #308cd9;
+}
+.footer-dark{
+  background-color: #000000;
+}
+.header-dark{
+  background-color: #000000;
+}
+.btn-light{
+  background-color: #59598f;
+  color: black;
+  border-radius: 15px;
+}
+.btn-dark{
+  background-color: #08080a;
+  color: #ffffff;
+  border-radius: 15px;
+}
+
+.homepage{
+  width: auto;
+  height: auto;
+  margin: 10px;
+}
