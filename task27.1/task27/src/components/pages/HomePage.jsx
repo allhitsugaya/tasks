@@ -1,6 +1,7 @@
 import {useContext, useState} from "react";
 import data from '../data.js';
-import {ThemeContext} from "../theme/Theme.jsx";
+import {ThemeContext} from "../theme/Theme.context.jsx";
+import {simpleFaker} from "@faker-js/faker";
 
 
 export const HomePage = () => {
@@ -10,7 +11,7 @@ export const HomePage = () => {
         const handleSubmit = (event) => {
             event.preventDefault();
             if (!task) return;
-            const fakeId = Date.now();
+            const fakeId = simpleFaker.string.uuid();
             const newTask = { id: fakeId, task };
             const updatedTask = [...isTask, newTask];
             setIsTask(updatedTask);
