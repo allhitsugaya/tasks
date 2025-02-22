@@ -2,6 +2,7 @@ import {useContext, useState} from "react";
 import data from '../data.js';
 import {ThemeContext} from "../theme/Theme.context.jsx";
 import {simpleFaker} from "@faker-js/faker";
+import BtnRemove from "../BtnGroup/BtnRemove.jsx";
 
 
 export const HomePage = () => {
@@ -37,7 +38,7 @@ export const HomePage = () => {
                     return (
                         <div key={task.id}>
                             <h4>{task.task}
-                                <button className="remove" onClick={() => removeUser(task.id)}>Remove</button>
+                                <BtnRemove id = {task.id} onRemove={removeUser}></BtnRemove>
                             </h4>
                         </div>)
                 })}
