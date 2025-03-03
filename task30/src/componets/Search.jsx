@@ -1,5 +1,5 @@
 import FormData from './FormData.jsx'
-import VisibleDta from "./VisibleDta.jsx";
+import VisibleData from "./VisibleData.jsx";
 import useSearch from "../hooks/useSearch.js"
 import {fetchRequest} from "../slices/userThunk.js";
 import {clearUsers} from "../slices/swapiSlice.js";
@@ -10,7 +10,7 @@ function Search() {
     return (
         <>
             <FormData handleSubmit={handleSubmit} query={query} handleChange={handleChange}/>
-             <VisibleDta clearAll={clearAll} users={users}/>
+             <VisibleData clearAll={clearAll} users={users}/>
         </>
     )
 }

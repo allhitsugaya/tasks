@@ -1,6 +1,6 @@
 import React from 'react'
 
-function VisibleDta({clearAll , users}) {
+function VisibleData({clearAll , users}) {
     return (
         <>
             <>
@@ -18,4 +18,4 @@ function VisibleDta({clearAll , users}) {
 )
 }
 
-export default VisibleDta
+export default VisibleData
