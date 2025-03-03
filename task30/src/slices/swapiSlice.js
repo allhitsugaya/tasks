@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {fetchRequest} from './userSlice.js'
+import {fetchRequest} from './userThunk.js'
 
 const initialState = {
     users: [],
