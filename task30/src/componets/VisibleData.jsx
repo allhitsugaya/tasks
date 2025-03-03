@@ -1,4 +1,5 @@
 import React from 'react'
+import BtnClear from "./BtnClear.jsx";
 
 function VisibleData({clearAll , users}) {
     return (
@@ -13,7 +14,7 @@ function VisibleData({clearAll , users}) {
                     </div>
                 </div>
             </>
-    <button type='button' className='btn btn-warning' onClick={clearAll}>Clear All</button>
+            <BtnClear clearAll={clearAll}/>
 </>
 )
 }
