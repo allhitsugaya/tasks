@@ -1,4 +1,4 @@
-import { put, takeEvery, delay} from 'redux-saga/effects';
+import { put, takeLatest, delay} from 'redux-saga/effects';
 import {addTodo, editToDo, removeToDo} from "./todoSlice.js";
 
 function* addTodoAsync({ payload }){
@@ -14,8 +14,8 @@ function* addTodoAsync({ payload }){
     yield put(editToDo({payload}));
 }
  function* todoSaga(){
-    yield takeEvery('todo/addTodoAsync', addTodoAsync);
-    yield takeEvery('todo/removeTodoAsync', removeTodoAsync);
-    yield takeEvery('todo/editTodoAsync', editTodoAsync);
+    yield takeLatest('todo/addTodoAsync', addTodoAsync);
+    yield takeLatest('todo/removeTodoAsync', removeTodoAsync);
+    yield takeLatest('todo/editTodoAsync', editTodoAsync);
  }
  export default todoSaga;
