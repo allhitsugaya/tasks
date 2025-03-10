@@ -1,17 +1,17 @@
 import React from 'react'
-import {addTodo} from "../store/todoSlice.js";
 import {useDispatch} from "react-redux";
 import {toast} from "react-toastify";
 
-function AddToDo({inputValue}) {
+function AddToDo({inputValue, setInputValue}) {
     const dispatch = useDispatch();
     const handleAddToDo = () =>{
         if(inputValue.length < 1){
             toast.error("Please enter a current task.");
             return;
         }
-        dispatch(addTodo(inputValue));
+        dispatch({type: 'todo/addTodoAsync', payload: inputValue});
         toast.success('Adding successfully.');
+        setInputValue('');
     }
     return (
         <button type='button' onClick={handleAddToDo}>Add</button>

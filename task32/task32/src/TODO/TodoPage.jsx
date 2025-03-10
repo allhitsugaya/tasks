@@ -1,5 +1,5 @@
 import './todoPage.css'
-import FormTodo from "./components/FormTodo.jsx";
+import FormTodo from "./components/Form/FormTodo.jsx";
 import { ToastContainer } from 'react-toastify';
 
 export function todoPage() {

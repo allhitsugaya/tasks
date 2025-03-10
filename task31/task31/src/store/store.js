@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import todoReducer from "./todoSlice.js";
-import todoSaga from "./todosagas.js";
+import todoSaga from "./todo.sagas.js";
 import createSagaMiddleware from 'redux-saga';
 
 const sagaMiddleware = createSagaMiddleware();

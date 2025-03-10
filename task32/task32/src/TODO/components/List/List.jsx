@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import DeleteBtn from "./DeleteBtn.jsx";
-import EditBtn from "./EditBtn.jsx";
+import EditBtn from "../Buttons/EditBtn.jsx";
 import {toast} from "react-toastify";
 import {Checkbox} from "@mui/joy";
 import Close from '@mui/icons-material/Close';
+import {nanoid} from "nanoid";
+import ActionBtn from "../Buttons/ActionBtn.jsx";
 
 
 function List({todo}) {
@@ -18,7 +19,7 @@ function List({todo}) {
         <>
             <h3>
             {todo.length > 0 ? (
-                todo.map((todoS, index) => <p key={index}><Checkbox uncheckedIcon={<Close />} color="success" onChange={handleChange}/>{todoS} <EditBtn todoS={todoS} index={index}/> <DeleteBtn index={index}/></p>)
+                todo.map((todoS, index) => <p key={nanoid()}><Checkbox uncheckedIcon={<Close />} color="success" onChange={handleChange}/>{todoS} <EditBtn todoS={todoS} index={index}/> <ActionBtn label='Delete' message='Successfully deletes task' action='todo/removeTodoAsync' payload={index}/></p>)
             ) : (
                 <p>No todos yet</p>
             )}

@@ -1,8 +1,8 @@
 import FormData from './FormData.jsx'
 import VisibleData from "./VisibleData.jsx";
 import useSearch from "../hooks/useSearch.js"
-import {fetchRequest} from "../../store/userThunk.js";
-import {clearUsers} from "../../store/swapiSlice.js";
+import {fetchRequest} from "../../store/swapi/userThunk.js";
+import {clearUsers} from "../../store/swapi/swapiSlice.js";
 
 function Search() {
     const userSelector = (state) => state.swapi.users;

@@ -1,10 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
-import {editToDo} from "../../store/todoSlice.js";
 import { useDispatch } from 'react-redux';
 import {toast} from "react-toastify";
-import Button from "@mui/material/Button";
-import Input from "@mui/joy/Input";
 
 function EditBtn({index, todoS}) {
     const dispatch = useDispatch();
@@ -13,7 +10,7 @@ function EditBtn({index, todoS}) {
 
     const handleEdit = () => {
         if(isEditing){
-            dispatch(editToDo({index, text}));
+            dispatch({type: 'todo/editTodoAsync', payload: {index, text}})
             setIsEditing(false);
             toast.info("Successfully edited task.");
         }
@@ -22,9 +19,9 @@ function EditBtn({index, todoS}) {
 
     return (
         <>
-        {isEditing?(<Input size="md" type="text" value={text} onChange={(e)=>setText(e.target.value)}/>)
-            : ( <span></span>)}
-            <Button type='button' onClick={handleEdit}>{isEditing?'Save':'Edit'}</Button>
+        {isEditing?(<input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>)
+            : null}
+            <button type='button' onClick={handleEdit}>{isEditing?'Save':'Edit'}</button>
         </>
     )
 }
