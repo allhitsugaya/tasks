@@ -4,9 +4,6 @@ import '@testing-library/jest-dom';
 import ActionBtn from '../components/ActionBtn/ActionBtn.jsx';
 
 describe('ActionBtn', () => {
-    beforeAll(() => {
-        console.log('beforeAll');
-    });
 
     it('should render the button with the correct text', () => {
         const { getByText } = render(<ActionBtn text="clear" onClick={() => {}} />);
@@ -23,7 +20,4 @@ describe('ActionBtn', () => {
         expect(handleClick).toBeCalled();
     });
 
-    afterAll(() => {
-        console.log('afterAll');
-    });
 });

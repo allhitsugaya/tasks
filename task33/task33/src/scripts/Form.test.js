@@ -4,9 +4,6 @@ import '@testing-library/jest-dom';
 import Form from '../components/Form/Form.jsx'
 
 describe('Form', () => {
-    beforeAll(() => {
-        console.log('beforeAll');
-    });
 
     it('should render the button, h2', () => {
         const mockSetTodo = jest.fn();
@@ -16,8 +13,5 @@ describe('Form', () => {
 
         expect(h2).toBeInTheDocument();
         expect(btn).toBeInTheDocument();
-    });
-    afterAll(() => {
-        console.log('afterAll');
     });
 });
