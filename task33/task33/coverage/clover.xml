@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1742083796845" clover="3.2.0">
+  <project timestamp="1742083796846" name="All files">
+    <metrics statements="14" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="7" elements="24" coveredelements="22" complexity="0" loc="14" ncloc="14" packages="4" files="4" classes="4"/>
+    <package name="ActionBtn">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ActionBtn.jsx" path="C:\Users\Serhii\Desktop\tasks\task33\task33\src\components\ActionBtn\ActionBtn.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="Form">
+      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="Form.jsx" path="C:\Users\Serhii\Desktop\tasks\task33\task33\src\components\Form\Form.jsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Input">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Input.jsx" path="C:\Users\Serhii\Desktop\tasks\task33\task33\src\components\Input\Input.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="List">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="List.jsx" path="C:\Users\Serhii\Desktop\tasks\task33\task33\src\components\List\List.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
